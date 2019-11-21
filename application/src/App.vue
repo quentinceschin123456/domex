@@ -41,10 +41,9 @@
       <HelloWorld/>
     </v-content>
   </v-app> -->
-    <div id="app">
+    <v-app>
       <router-view></router-view>
-    
-  </div>
+    </v-app>
 
 </template>
 
