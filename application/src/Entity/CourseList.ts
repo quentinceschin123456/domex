@@ -1,4 +1,4 @@
-import CourseRaw from './';
+import { CourseRaw } from './';
 
 
 export class CourseList {
