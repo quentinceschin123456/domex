@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import CourseListView from '../components/CourseListView.vue'
+import CourseListView from '../CourseFeatures/View/CourseListView.vue'
+import RecetteListView from '../CourseFeatures/View/RecetteListView.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,10 @@ const routes = [
     path: '/test',
     name: 'CourseList',
     component: CourseListView
+},{
+  path: '/recette',
+  name: 'Recette',
+  component: RecetteListView
 },
   {
     path: '/about',

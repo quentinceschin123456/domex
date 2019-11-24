@@ -4,11 +4,14 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 
-import CourseListView from './components/CourseListView.vue'
+import RecetteListView from './CourseFeatures/View/RecetteListView.vue';
+import RecetteComponent from './CourseFeatures/Composant/RecetteComponent.vue';
 
 Vue.config.productionTip = false
 
 //Vue.component('CourseList', CourseListView);
+Vue.component('Recette',RecetteComponent);
+Vue.component('RecetteList',RecetteListView);
 
 new Vue({
   router,
