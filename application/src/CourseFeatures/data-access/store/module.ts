@@ -1,7 +1,7 @@
 import { Module }                            from 'vuex';
 import { CourseListDefaultState, ICourseListState } from './state';
 import { CourseListActions } from './action';
-import { CourseListGetters } from './getters';
+import { CourseListGetters } from './getter';
 import { CourseListMutations } from './mutation';
 
 

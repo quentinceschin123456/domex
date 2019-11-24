@@ -5,7 +5,7 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 
 import RecetteListView from './CourseFeatures/View/RecetteListView.vue';
-import RecetteComponent from './CourseFeatures/Composant/RecetteComponent.vue';
+import RecetteComponent from './CourseFeatures/Component/RecetteComponent.vue';
 
 Vue.config.productionTip = false
 

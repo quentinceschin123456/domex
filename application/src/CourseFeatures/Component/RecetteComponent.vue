@@ -1,18 +1,42 @@
 <template>
-<v-card>
+<v-card width="500px">
     <v-img
     :src="recetteImg"
     height="200px"
     ></v-img>
-
-    <v-card-title>
+<v-app-bar
+        color="deep-purple accent-4"
+        dark
+      >
+        titre de la recette
+        <v-spacer></v-spacer>
+  
+        <v-btn icon >
+          <v-icon>favorite</v-icon>
+        </v-btn>
+       
+          <v-btn icon>
+          <v-icon>create</v-icon>
+        </v-btn>
+     <v-btn icon>
+          <v-icon>delete</v-icon>
+        </v-btn>
+        <v-btn icon>
+          <v-icon>add_shopping_cart</v-icon>
+        </v-btn>
         
-
-        <v-btn icon @click="show = !show">
+       
+      </v-app-bar>
+            <v-btn fab
+            color="blue"
+            dark
+                  
+                  small
+                  absolute
+                  bottom
+                  right  @click="show = !show">
             <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
         </v-btn>
-    </v-card-title>
-
     <v-card-actions>
        <div v-show="show">
             <v-divider></v-divider>
@@ -34,7 +58,7 @@ import { Component, Vue ,Prop } from 'vue-property-decorator';
 })
 export default class RecetteComponent extends Vue {
 
-    //   @Action('unSelectKBDiagnosticIssue', { namespace: 'diagnosticKb' }) unSelectKBDiagnosticIssue:any;
+    // @Action('unSelectKBDiagnosticIssue', { namespace: 'diagnosticKb' }) unSelectKBDiagnosticIssue:any;
 
     // @Getter('error', { namespace: 'diagnosticKb' }) error!: HttpRequestError;
 
