@@ -54,7 +54,7 @@
 import { Component, Vue ,Prop } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 
-import { CourseList, Recette } from '../data-access';
+import { CourseList, Recette, Ingredient } from '../data-access';
 
 @Component({
   name: 'Recette'
@@ -63,7 +63,7 @@ export default class RecetteComponent extends Vue {
 
     // @Action('unSelectKBDiagnosticIssue', { namespace: 'diagnosticKb' }) unSelectKBDiagnosticIssue:any;
 
-    @Prop(Recette) recette?: Recette;
+    @Prop(Recette) recette!: Recette;
 
     show:boolean = false;
 
@@ -73,6 +73,10 @@ export default class RecetteComponent extends Vue {
 
     get recetteName(){
       return 'titre';
+    }
+
+    created(){
+      this.recette = new Recette(0,"pizza","","commander la pizza",[new Ingredient(),1])
     }
 }
 </script>
