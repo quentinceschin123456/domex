@@ -8,7 +8,7 @@
         color="deep-purple accent-4"
         dark
       >
-        titre de la recette
+       {{ recette.name}}
         <v-spacer></v-spacer>
   
         <v-btn icon >
@@ -52,6 +52,9 @@
 
 <script lang="ts">
 import { Component, Vue ,Prop } from 'vue-property-decorator';
+import { Getter, Action } from 'vuex-class';
+
+import { CourseList, Recette } from '../data-access';
 
 @Component({
   name: 'Recette'
@@ -60,13 +63,16 @@ export default class RecetteComponent extends Vue {
 
     // @Action('unSelectKBDiagnosticIssue', { namespace: 'diagnosticKb' }) unSelectKBDiagnosticIssue:any;
 
-    // @Getter('error', { namespace: 'diagnosticKb' }) error!: HttpRequestError;
-
+    @Prop(Recette) recette?: Recette;
 
     show:boolean = false;
 
     get recetteImg(){
         return 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg';
+    }
+
+    get recetteName(){
+      return 'titre';
     }
 }
 </script>

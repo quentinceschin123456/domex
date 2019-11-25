@@ -6,10 +6,14 @@ import vuetify from './plugins/vuetify';
 
 import RecetteListView from './CourseFeatures/View/RecetteListView.vue';
 import RecetteComponent from './CourseFeatures/Component/RecetteComponent.vue';
+import CourseRawComponent from './CourseFeatures/Component/CourseRawComponent.vue';
+import CourseListView from './CourseFeatures/View/CourseListView.vue'
+
 
 Vue.config.productionTip = false
 
-//Vue.component('CourseList', CourseListView);
+Vue.component('CourseRaw', CourseRawComponent);
+Vue.component('CourseList', CourseListView);
 Vue.component('Recette',RecetteComponent);
 Vue.component('RecetteList',RecetteListView);
 

@@ -16,7 +16,10 @@ import RecetteComponent from '../Component/RecetteComponent.vue'
   name: 'RecetteList'
 })
 
-export default class RecetteListView extends Vue {}
+export default class RecetteListView extends Vue {
+    // @Getter('listeRecette', { namespace: 'courselist' }) listeRecette!: Recette[];
+
+}
 </script>
 
 <style>

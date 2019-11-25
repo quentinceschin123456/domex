@@ -1,4 +1,4 @@
-import { CourseList } from '../model';
+import { CourseList, Recette, Produit } from '../model';
 
 export interface ICourseListState {
   /** The latest action error result asssociated to Chatbot state */
@@ -7,12 +7,16 @@ export interface ICourseListState {
   isLoading: boolean;
   
   listeCourse?: CourseList;
+  listeRecette?: Recette[];
+  listeProduit?: Produit[];
 }
 
 export const CourseListDefaultState = (): ICourseListState => {
   return {
     // error: undefined,
     isLoading: false,
-    listeCourse: undefined
+    listeCourse: undefined,
+    listeRecette: undefined,
+    listeProduit: undefined
   };
 };
