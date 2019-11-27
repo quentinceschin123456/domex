@@ -1,5 +1,5 @@
 <template>
-<v-card width="500px">
+<v-card class="recette-card">
     <v-img
     :src="recette.imgUrl"
     height="200px"
@@ -29,14 +29,14 @@
       </v-app-bar>
             <v-btn fab
             color="blue"
-            dark
-                  
-                  small
-                  absolute
-                  bottom
-                  right  @click="show = !show">
-            <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-        </v-btn>
+            dark  
+            small
+            absolute
+            bottom
+            right  
+            @click="show = !show">
+              <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+            </v-btn>
     <v-card-actions>
        <div v-show="show">
             <!-- <v-divider></v-divider> -->
@@ -44,7 +44,7 @@
             <v-card-text>
               <ul class="indregient-list-container">
                 <li v-for="rawRecette in recette.listIngredients" :key="rawRecette.id">
-                  {{ rawRecette.ingredient.name }} {{ rawRecette.qte }}
+                  Ingrédient: {{ rawRecette.ingredient.name }} | Quantité: {{ rawRecette.qte }}
                  </li>
               </ul>
             </v-card-text>
@@ -59,9 +59,13 @@ import { Component, Vue ,Prop } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 
 import { CourseList, Recette, Ingredient } from '../data-access';
+import RecetteRawComponent from '../Component/RecetteRawComponent.vue'
 
 @Component({
-  name: 'Recette'
+  name: 'Recette',
+  components:{
+    RecetteRawComponent
+  }
 })
 export default class RecetteComponent extends Vue {
 
@@ -81,4 +85,8 @@ export default class RecetteComponent extends Vue {
 
 <style scoped>
 
+.recette-card{
+ margin: 20px;
+ width: 500px;
+}
 </style>

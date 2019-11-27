@@ -1,7 +1,7 @@
 <template>
 <v-container>
-  <v-layout justify-center align-center> 
-      <v-flex align-center>
+  <v-layout column justify-center align-center> 
+      <v-flex align-center  v-for="recette in recettes" :key="recette.id">
           <Recette :recette="recette"></Recette>
       </v-flex>
   </v-layout>
@@ -23,13 +23,18 @@ export default class RecetteListView extends Vue {
   @Getter('listeRecette', { namespace: 'courselist' }) listeRecette!: Recette[];
  liste: RecetteRaw[] = [
    new RecetteRaw(new Ingredient("tomate"),3,1),
-   new RecetteRaw(new Ingredient("froamge"),1,2),
+   new RecetteRaw(new Ingredient("fromage"),1,2),
    ];
 
-   recette: Recette = new Recette(0,"pizza","https://cdn.vuetifyjs.com/images/cards/sunshine.jpg","commander la pizza",this.liste);
+   recettes: Recette[] = [
+     new Recette(0,"pizza 1","https://cdn.vuetifyjs.com/images/cards/sunshine.jpg","commander la pizza",this.liste),
+     new Recette(1,"pizza 2","https://cdn.vuetifyjs.com/images/cards/sunshine.jpg","commander la pizza",this.liste),
+     new Recette(2,"pizza 3" ,"https://cdn.vuetifyjs.com/images/cards/sunshine.jpg","commander la pizza",this.liste)
+   ];
 }
 </script>
 
 <style>
+
 
 </style>
