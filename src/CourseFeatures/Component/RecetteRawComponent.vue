@@ -15,7 +15,7 @@ import { Component, Vue ,Prop } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 
 import { CourseList, Recette, Ingredient } from '../data-access';
-import { RecetteRaw } from '../data-access/model/RecetteRaw.';
+import { RecetteRaw } from '../data-access/model/RecetteRaw';
 
 @Component({
   name: 'RecetteRaw'
