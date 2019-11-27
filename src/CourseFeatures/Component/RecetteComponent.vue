@@ -11,8 +11,8 @@
        {{ recette.name}}
         <v-spacer></v-spacer>
   
-        <v-btn icon >
-          <v-icon>favorite</v-icon>
+        <v-btn icon @click="recette.isFavorite = !recette.isFavorite">
+          <v-icon :color="recette.isFavorite ? 'red': ''">favorite</v-icon>
         </v-btn>
        
           <v-btn icon>
@@ -21,7 +21,7 @@
      <v-btn icon>
           <v-icon>delete</v-icon>
         </v-btn>
-        <v-btn icon>
+        <v-btn icon @click="addToCourseList">
           <v-icon>add_shopping_cart</v-icon>
         </v-btn>
         
@@ -74,9 +74,9 @@ export default class RecetteComponent extends Vue {
     get recetteName(){
       return 'titre';
     }
+    
 
     created(){
-      this.recette = new Recette(0,"pizza","","commander la pizza",[new Ingredient(),1])
     }
 }
 </script>

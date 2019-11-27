@@ -9,9 +9,11 @@ export class Recette {
         public name: string,
     public imgUrl: string,
     public instructions: string, // les étapes à suivre
-    public listIngredients: [Ingredient, number]
+    public listIngredients: [Ingredient, number],
+    public isFavorite?:boolean
 
         ) {
+            isFavorite = false;
 
     }
 }
