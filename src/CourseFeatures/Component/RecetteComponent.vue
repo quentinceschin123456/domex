@@ -47,6 +47,10 @@
                   Ingrédient: {{ rawRecette.ingredient.name }} | Quantité: {{ rawRecette.qte }}
                  </li>
               </ul>
+              <v-divider></v-divider>
+              <div>
+                {{ recette.instructions }}
+              </div>
             </v-card-text>
         </div>
     </v-card-actions>

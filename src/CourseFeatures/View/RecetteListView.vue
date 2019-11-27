@@ -12,8 +12,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import RecetteComponent from '../Component/RecetteComponent.vue'
 import { Action,Getter } from 'vuex-class';
-import { Recette, Ingredient } from '../data-access';
-import { RecetteRaw } from '../data-access/model/RecetteRaw.';
+import { Recette, Ingredient, RecetteRaw } from '../data-access';
 
 @Component({
   name: 'RecetteList'
