@@ -18,6 +18,7 @@ Projet web pour la gestion de la vie en communauté :
    git config --global alias.pushall '!git remote | xargs -L1 git push --all'
 
 
+heroku cconfig example = https://github.com/heroku/node-js-getting-started.git
 
 # application
 
