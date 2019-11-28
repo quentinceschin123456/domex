@@ -38,20 +38,43 @@
               <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             </v-btn>
     <v-card-actions>
-       <div v-show="show">
-            <!-- <v-divider></v-divider> -->
-
-            <v-card-text>
-              <ul class="indregient-list-container">
+       <div v-show="show"  style="width:100%;">
+        
+          <v-tabs
+          fixed-tabs
+          centered
+          v-model="tabs"
+          background-color="indigo"
+          dark>
+            <v-tab>
+            Ingrédient
+            </v-tab>
+            <v-tab>
+            Instructions
+            </v-tab>
+            <v-tab>
+            Ustensible
+            </v-tab>
+          </v-tabs>
+      <v-tabs-items v-model="tabs">
+        <v-tab-item>
+<ul class="indregient-list-container">
                 <li v-for="rawRecette in recette.listIngredients" :key="rawRecette.id">
                   Ingrédient: {{ rawRecette.ingredient.name }} | Quantité: {{ rawRecette.qte }}
                  </li>
               </ul>
-              <v-divider></v-divider>
-              <div>
+        </v-tab-item>
+        <v-tab-item>
+          <div>
                 {{ recette.instructions }}
               </div>
-            </v-card-text>
+        </v-tab-item>
+        <v-tab-item>
+        </v-tab-item>
+      </v-tabs-items>
+              
+          
+          
         </div>
     </v-card-actions>
 </v-card>
@@ -78,6 +101,7 @@ export default class RecetteComponent extends Vue {
     @Prop(Recette) recette!: Recette;
 
     show:boolean = false;
+    tabs:any = null;
 
     get recetteImg(){
         return '';
