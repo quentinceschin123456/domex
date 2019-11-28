@@ -58,7 +58,7 @@
           </v-tabs>
       <v-tabs-items v-model="tabs">
         <v-tab-item>
-<ul class="indregient-list-container">
+        <ul class="indregient-list-container">
                 <li v-for="rawRecette in recette.listIngredients" :key="rawRecette.id">
                   Ingrédient: {{ rawRecette.ingredient.name }} | Quantité: {{ rawRecette.qte }}
                  </li>
