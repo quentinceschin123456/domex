@@ -1,18 +1,7 @@
-var express = require('express');
-var app = express();
-var serveStatic = require('serve-static');
-
-var port = process.env.PORT || 8080;
-
-// app.use(history({
-//     // OPTIONAL: Includes more verbose logging
-//     verbose: true
-// }))
-
-app.use(serveStatic(__dirname + '/dist'));
-
-
+const express = require('express');
+const serveStatic = require("serve-static")
+const path = require('path');
+app = express();
+app.use(serveStatic(path.join(__dirname, 'dist')));
+const port = process.env.PORT || 80;
 app.listen(port);
-
-// eslint-disable-next-line no-console
-console.log("Server is loaded ...");
