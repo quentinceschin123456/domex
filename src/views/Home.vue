@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <a href="https://domexapplication.000webhostapp.com/test">test link</a>
+    <a href="http://localhost:5000/test">test link</a>
   </div>
 </template>
 

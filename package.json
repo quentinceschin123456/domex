@@ -84,12 +84,12 @@
     "jest": {
         "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
     },
-    "gitHooks": {
-        "pre-commit": "lint-staged"
-    },
     "lint-staged": {
         "*.{js,vue,ts}": [
             "vue-cli-service lint"
         ]
+    },
+    "engines": {
+        "node": "10.x"
     }
 }
