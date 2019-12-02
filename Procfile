@@ -1,1 +1,1 @@
-web: npm install;npm run build;node launcher.js
+web: node launcher.js
