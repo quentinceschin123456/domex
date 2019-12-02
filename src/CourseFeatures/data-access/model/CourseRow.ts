@@ -1,7 +1,7 @@
 import { Produit } from './Produit';
 
 
-export class CourseRaw {
+export class CourseRow {
     
 
     private id:number| undefined;

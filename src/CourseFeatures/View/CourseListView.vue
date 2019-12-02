@@ -1,18 +1,18 @@
 <template>
 <v-layout justify-center align-center>
-<CourseRaw></CourseRaw>
+<CourseRow></CourseRow>
   </v-layout>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import CourseRawComponent from '../Component/CourseRawComponent.vue'
+import CourseRowComponent from '../Component/CourseRowComponent.vue'
 
 
 @Component({
   name: 'CourseList',
   components: {
-    CourseRawComponent
+    CourseRowComponent
   }
 })
 

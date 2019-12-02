@@ -1,7 +1,7 @@
 import { Ingredient } from './Ingredient';
 
 
-export class RecetteRaw {
+export class IngredientRow {
     
 
     private id:number| undefined;

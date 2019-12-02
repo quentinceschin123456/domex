@@ -12,7 +12,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import RecetteComponent from '../Component/RecetteComponent.vue'
 import { Action,Getter } from 'vuex-class';
-import { Recette, Ingredient, RecetteRaw } from '../data-access';
+import { Recette, Ingredient, IngredientRow } from '../data-access';
 
 @Component({
   name: 'RecetteList'
@@ -20,9 +20,9 @@ import { Recette, Ingredient, RecetteRaw } from '../data-access';
 
 export default class RecetteListView extends Vue {
   @Getter('listeRecette', { namespace: 'courselist' }) listeRecette!: Recette[];
- liste: RecetteRaw[] = [
-   new RecetteRaw(new Ingredient("tomate"),3,1),
-   new RecetteRaw(new Ingredient("fromage"),1,2),
+ liste: IngredientRow[] = [
+   new IngredientRow(new Ingredient("tomate"),3,1),
+   new IngredientRow(new Ingredient("fromage"),1,2),
    ];
 
    recettes: Recette[] = [

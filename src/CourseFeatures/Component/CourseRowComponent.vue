@@ -9,7 +9,7 @@ import { Component, Vue ,Prop } from 'vue-property-decorator';
   name: 'CourseRaw'
 })
 
-export default class CourseRawComponent extends Vue {
+export default class CourseRowComponent extends Vue {
     /*
     is checked
     is to delete

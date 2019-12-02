@@ -58,11 +58,12 @@
           </v-tabs>
       <v-tabs-items v-model="tabs">
         <v-tab-item>
-        <ul class="indregient-list-container">
-                <li v-for="rawRecette in recette.listIngredients" :key="rawRecette.id">
-                  Ingrédient: {{ rawRecette.ingredient.name }} | Quantité: {{ rawRecette.qte }}
+        <!-- <ul class="indregient-list-container">
+                <li v-for="rowRecette in recette.listIngredients" :key="rowRecette.id">
+                  Ingrédient: {{ rowRecette.ingredient.name }} | Quantité: {{ rowRecette.qte }}
                  </li>
-              </ul>
+              </ul> -->
+              <IngredientRow></IngredientRow>
         </v-tab-item>
         <v-tab-item>
           <div>
@@ -86,12 +87,12 @@ import { Component, Vue ,Prop } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 
 import { CourseList, Recette, Ingredient } from '../data-access';
-import RecetteRawComponent from '../Component/RecetteRawComponent.vue'
+import IngredientRowComponent from '../Component/IngredientRowComponent.vue'
 
 @Component({
   name: 'Recette',
   components:{
-    RecetteRawComponent
+    IngredientRowComponent
   }
 })
 export default class RecetteComponent extends Vue {

@@ -1,5 +1,5 @@
 import { Ingredient } from './Ingredient';
-import { RecetteRaw } from './RecetteRaw';
+import { IngredientRow } from './IngredientRow';
 
 export class Recette {
 
@@ -10,7 +10,7 @@ export class Recette {
         public name: string,
     public imgUrl: string,
     public instructions: string, // les étapes à suivre
-    public listIngredients: RecetteRaw[],
+    public listIngredients: IngredientRow[],
     public isFavorite?:boolean
 
         ) {
