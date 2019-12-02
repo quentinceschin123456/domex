@@ -7,7 +7,7 @@
         "build": "vue-cli-service build",
         "test:unit": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint",
-        "start": "node launcher.js",
+        "start": "node launcher.js"
     },
     "dependencies": {
         "connect-history-api-fallback": "^1.6.0",
@@ -63,15 +63,17 @@
         "parserOptions": {
             "parser": "@typescript-eslint/parser"
         },
-        "overrides": [{
-            "files": [
-                "**/__tests__/*.{j,t}s?(x)",
-                "**/tests/unit/**/*.spec.{j,t}s?(x)"
-            ],
-            "env": {
-                "jest": true
+        "overrides": [
+            {
+                "files": [
+                    "**/__tests__/*.{j,t}s?(x)",
+                    "**/tests/unit/**/*.spec.{j,t}s?(x)"
+                ],
+                "env": {
+                    "jest": true
+                }
             }
-        }]
+        ]
     },
     "postcss": {
         "plugins": {
