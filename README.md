@@ -41,3 +41,46 @@ Ingredient est un itemAchetalble( prévoir cette classe pour différencier le co
 possibilité de créer un webscrapper pour récupérer les prix MAIS très compliquer à maintenir
 et il faut prévoir des modules de scrappe pour chaque magasin + matcher les 
 articles avec les ingrédients
+
+
+
+  git remote add github https://github.com/quentinceschin123456/domex.git
+   
+   
+   git push -u github master
+   
+   
+   git config --global alias.pushall '!git remote | xargs -L1 git push --all'
+
+
+heroku cconfig example = https://github.com/heroku/node-js-getting-started.git
+
+# application
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your unit tests
+```
+npm run test:unit
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
