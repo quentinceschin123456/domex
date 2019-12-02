@@ -7,12 +7,10 @@
         "build": "vue-cli-service build",
         "test:unit": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint",
-        "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
         "start": "node launcher.js"
     },
     "dependencies": {
         "core-js": "^3.3.2",
-        "serve-static": "^1.13.2",
         "vue": "^2.6.10",
         "vue-class-component": "^7.0.2",
         "vue-property-decorator": "^8.3.0",
@@ -62,15 +60,17 @@
         "parserOptions": {
             "parser": "@typescript-eslint/parser"
         },
-        "overrides": [{
-            "files": [
-                "**/__tests__/*.{j,t}s?(x)",
-                "**/tests/unit/**/*.spec.{j,t}s?(x)"
-            ],
-            "env": {
-                "jest": true
+        "overrides": [
+            {
+                "files": [
+                    "**/__tests__/*.{j,t}s?(x)",
+                    "**/tests/unit/**/*.spec.{j,t}s?(x)"
+                ],
+                "env": {
+                    "jest": true
+                }
             }
-        }]
+        ]
     },
     "postcss": {
         "plugins": {
