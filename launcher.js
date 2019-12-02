@@ -4,10 +4,10 @@ var serveStatic = require('serve-static');
 
 var port = process.env.PORT || 8080;
 
-app.use(history({
-    // OPTIONAL: Includes more verbose logging
-    verbose: true
-}))
+// app.use(history({
+//     // OPTIONAL: Includes more verbose logging
+//     verbose: true
+// }))
 
 app.use(serveStatic(__dirname + '/dist'));
 
