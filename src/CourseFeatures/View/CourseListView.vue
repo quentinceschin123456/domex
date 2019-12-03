@@ -47,7 +47,7 @@ courseList= new CourseList(0,"liste", [new CourseRow(0,new Produit(0,"Tomate","u
 
 get headers(){
   return [
-        { text: 'id', value: 'id' },
+        { text: 'Image', value: 'imgLink' },
         { text: 'Produit', value: 'produitName' },
         { text: 'Quantité', value: 'qte' },
       ]

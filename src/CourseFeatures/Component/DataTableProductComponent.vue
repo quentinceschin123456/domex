@@ -8,7 +8,7 @@
 
 <!--  https://vuetifyjs.com/en/components/data-tables#crud-actions  -->
 <!-- https://vuetifyjs.com/en/components/lists#icon-with-2-lines-and-action -->
-
+<!-- https://vuetifyjs.com/en/components/data-tables#customizing-default-rows -->
 </template>
 
 <script lang="ts">
@@ -31,7 +31,7 @@ get datas(){
   var res:any = []; 
   this.courseRowList.forEach(el => {
     var temp:any = {};
-    temp.id = el.id;
+    temp.imgLink = el.produit ? el.produit.imgLink : undefined;
     temp.produitName = el.produit ? el.produit.name: undefined ;
     temp.qte = el.qte;
     res.push(temp);

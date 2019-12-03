@@ -105,10 +105,12 @@ export default class RecetteComponent extends Vue {
     tabs:any = null;
 
     get recetteImg(){
-        return '';
+        return this.recette.imgUrl ? this.recette.imgUrl : '';
     }
 
-    
+    addToCourseList(){
+
+    }
 }
 </script>
 
