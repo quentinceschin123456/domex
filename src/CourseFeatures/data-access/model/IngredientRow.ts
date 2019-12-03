@@ -4,9 +4,9 @@ import { Ingredient } from './Ingredient';
 export class IngredientRow {
     
 
-    private id:number| undefined;
-    private ingredient:Ingredient| undefined;
-    private qte:number| undefined;
+    public id:number| undefined;
+    public ingredient:Ingredient| undefined;
+    public qte:number| undefined;
     
     constructor(ingredient:Ingredient,qte:number,id?:number){
         this.id = id;

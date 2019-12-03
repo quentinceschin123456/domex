@@ -6,7 +6,7 @@
 import { Component, Vue ,Prop } from 'vue-property-decorator';
 
 @Component({
-  name: 'CourseRaw'
+  name: 'CourseRow'
 })
 
 export default class CourseRowComponent extends Vue {

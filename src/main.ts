@@ -7,6 +7,7 @@ import vuetify from './plugins/vuetify';
 import RecetteComponent from './CourseFeatures/Component/RecetteComponent.vue';
 import CourseRowComponent from './CourseFeatures/Component/CourseRowComponent.vue';
 import IngredientRowComponent from './CourseFeatures/Component/IngredientRowComponent.vue';
+import DataTableProductComponent from './CourseFeatures/Component/DataTableProductComponent.vue';
 
 
 import RecetteListView from './CourseFeatures/View/RecetteListView.vue';
@@ -15,11 +16,12 @@ import CourseListView from './CourseFeatures/View/CourseListView.vue'
 
 Vue.config.productionTip = false
 
-Vue.component('CourseRaw', CourseRowComponent);
+Vue.component('CourseRow', CourseRowComponent);
 Vue.component('CourseList', CourseListView);
 Vue.component('Recette',RecetteComponent);
 Vue.component('RecetteList',RecetteListView);
 Vue.component('IngredientRow',IngredientRowComponent);
+Vue.component('DataTableProduct',DataTableProductComponent);
 
 new Vue({
   router,

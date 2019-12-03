@@ -22,6 +22,11 @@ const routes = [
   name: 'Recette',
   component: RecetteListView
 },
+{
+  path: '/courseList',
+  name: 'CourseList',
+  component: CourseListView
+},
   {
     path: '/about',
     name: 'about',

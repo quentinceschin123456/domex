@@ -5,9 +5,9 @@ export class Produit {
     public name: string;
     public imgLink: string;
 
-    constructor() {
-        this.name = '';
-        this.id = -1;
-        this.imgLink = '';
+    constructor(id:number,name:string,imgLink:string) {
+        this.name = name;
+        this.id = id;
+        this.imgLink = imgLink;
     }
 }

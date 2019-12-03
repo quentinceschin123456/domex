@@ -3,7 +3,7 @@ import { Produit } from './Produit';
 export class Ingredient extends Produit  {
 
     constructor(name:string) {
-        super();
+        super(0,name,"url");
         this.name = name;
     }
 

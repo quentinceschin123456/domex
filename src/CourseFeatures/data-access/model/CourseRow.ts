@@ -4,8 +4,14 @@ import { Produit } from './Produit';
 export class CourseRow {
     
 
-    private id:number| undefined;
-    private produit:Produit| undefined;
-    private qte:number| undefined;
+    public id:number| undefined;
+    public produit:Produit| undefined;
+    public qte:number| undefined;
+
+    constructor(id:number,produit:Produit,qte:number){
+        this.id = id;
+        this.produit = produit;
+        this.qte = qte;
+    }
     
 }
