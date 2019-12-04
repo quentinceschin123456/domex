@@ -7,7 +7,7 @@
   >
 
   <template v-slot:item.imgLink="{ item }">
-    <v-img :src="item.imgLink"></v-img>
+    <v-img width="50px" :src="item.imgLink"></v-img>
   </template>
   
   <template v-slot:item.action="{ item }">
