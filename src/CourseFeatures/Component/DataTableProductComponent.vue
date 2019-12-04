@@ -4,7 +4,29 @@
     :items="datas"
     hide-default-footer
     class="elevation-1"
-  ></v-data-table>
+  >
+
+  <template v-slot:item.imgLink="{ item }">
+    <v-img :src="item.imgLink"></v-img>
+  </template>
+  
+  <template v-slot:item.action="{ item }">
+      <v-icon
+        small
+        class="mr-2"
+        @click="editItem(item)"
+      >
+        edit
+      </v-icon>
+      <v-icon
+        small
+        @click="deleteItem(item)"
+      >
+        delete
+      </v-icon>
+    </template>
+  </v-data-table>
+   
 
 <!--  https://vuetifyjs.com/en/components/data-tables#crud-actions  -->
 <!-- https://vuetifyjs.com/en/components/lists#icon-with-2-lines-and-action -->
