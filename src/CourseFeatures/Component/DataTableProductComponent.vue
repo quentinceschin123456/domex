@@ -1,7 +1,7 @@
 <template>
 <v-data-table
     :headers="headers"
-    :items="datas"
+    :items="convertObjectTodatas"
     hide-default-footer
     class="elevation-1"
   >
@@ -27,10 +27,12 @@
     </template>
   </v-data-table>
    
+<!-- 
+https://vuetifyjs.com/en/components/data-tables#crud-actions 
+https://vuetifyjs.com/en/components/lists#icon-with-2-lines-and-action
+https://vuetifyjs.com/en/components/data-tables#customizing-default-rows
+ -->
 
-<!--  https://vuetifyjs.com/en/components/data-tables#crud-actions  -->
-<!-- https://vuetifyjs.com/en/components/lists#icon-with-2-lines-and-action -->
-<!-- https://vuetifyjs.com/en/components/data-tables#customizing-default-rows -->
 </template>
 
 <script lang="ts">
@@ -49,23 +51,31 @@ export default class DataTableProductComponent extends Vue {
     @Prop() courseRowList!: CourseRow[] ;
     @Prop() headers!: String[];
 
-get datas(){
-  var res:any = []; 
-  this.courseRowList.forEach(el => {
-    var temp:any = {};
-    temp.imgLink = el.produit ? el.produit.imgLink : undefined;
-    temp.produitName = el.produit ? el.produit.name: undefined ;
-    temp.qte = el.qte;
-    res.push(temp);
-  });
-  
-// // eslint-disable-next-line no-console
-//   console.log(res, this.courseRowList,[res]);
-  return res;
-}
-  
-
+    get convertObjectTodatas(){
+      var res:any = []; 
+      this.courseRowList.forEach(el => {
+        var temp:any = {};
+        temp.couresRaw = el; // permettra de garder la ref à l'objet
+        temp.imgLink = el.produit ? el.produit.imgLink : undefined;
+        temp.produitName = el.produit ? el.produit.name: undefined ;
+        temp.qte = el.qte;
+        res.push(temp);
+      });
+      
+      return res;
     }
+
+    editItem(item:any){
+      alert("edit "+ item.couresRaw.id);
+      
+// eslint-disable-next-line no-console
+      console.log(item);
+    }
+    deleteItem(item:any){
+      alert("delete ");
+    }
+
+}
 </script>
 
 <style scoped>
