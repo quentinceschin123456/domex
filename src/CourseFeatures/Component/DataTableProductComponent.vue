@@ -2,10 +2,15 @@
 <v-data-table
     :headers="headers"
     :items="convertObjectTodatas"
+    item-key="couresRaw.id"
     hide-default-footer
+    :show-select="isOnBuy"
+
     class="elevation-1"
   >
-
+  <template v-slot:top>
+  
+  </template>
   <template v-slot:item.imgLink="{ item }">
     <v-img width="50px" :src="item.imgLink"></v-img>
   </template>
@@ -50,9 +55,10 @@ export default class DataTableProductComponent extends Vue {
 
     @Prop() courseRowList!: CourseRow[] ;
     @Prop() headers!: String[];
-
+    @Prop() isOnBuy:boolean = false;
+    
     get convertObjectTodatas(){
-      var res:any = []; 
+      var res:any = [];
       this.courseRowList.forEach(el => {
         var temp:any = {};
         temp.couresRaw = el; // permettra de garder la ref à l'objet

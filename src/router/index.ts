@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import CourseListView from '../CourseFeatures/View/CourseListView.vue'
 import RecetteListView from '../CourseFeatures/View/RecetteListView.vue'
-import IngredientRowComponent from '../CourseFeatures/Component/IngredientRowComponent.vue'
+import CourseRowComponent from '../CourseFeatures/Component/CourseRowComponent.vue'
 
 Vue.use(VueRouter)
 
@@ -15,8 +15,8 @@ const routes = [
   },
   {
     path: '/test',
-    name: 'IngredientRow',
-    component: IngredientRowComponent
+    name: 'CourseRow',
+    component: CourseRowComponent
 },{
   path: '/recette',
   name: 'Recette',
