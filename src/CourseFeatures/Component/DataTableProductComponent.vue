@@ -1,18 +1,19 @@
 <template>
 <v-data-table
+    :v-model="selected"
     :headers="headers"
-    :items="convertObjectTodatas"
+    :items="courseRowList"
     item-key="couresRaw.id"
     hide-default-footer
     :show-select="isOnBuy"
 
     class="elevation-1"
   >
-  <template v-slot:top>
-  
+  <template v-slot:item.data-table-select="{item}">
+    <v-checkbox :v-model="selected" :value="item"></v-checkbox>
   </template>
-  <template v-slot:item.imgLink="{ item }">
-    <v-img width="50px" :src="item.imgLink"></v-img>
+  <template v-slot:item.produit.imgLink="{ item }">
+    <v-img width="50px" :src="item.produit.imgLink"></v-img>
   </template>
   
   <template v-slot:item.action="{ item }">
@@ -54,28 +55,37 @@ export default class DataTableProductComponent extends Vue {
     // @Action('unSelectKBDiagnosticIssue', { namespace: 'diagnosticKb' }) unSelectKBDiagnosticIssue:any;
 
     @Prop() courseRowList!: CourseRow[] ;
-    @Prop() headers!: String[];
     @Prop() isOnBuy:boolean = false;
-    
+    @Prop() selected!:any;
+
+      get headers(){
+        return [
+              { text: 'Image', value: 'produit.imgLink' },
+              { text: 'Produit', value: 'produit.name' },
+              { text: 'Quantité', value: 'qte' },
+              { text: 'Actions', value: 'action', sortable: false },
+            ]
+      }
+
     get convertObjectTodatas(){
       var res:any = [];
       this.courseRowList.forEach(el => {
         var temp:any = {};
         temp.couresRaw = el; // permettra de garder la ref à l'objet
-        temp.imgLink = el.produit ? el.produit.imgLink : undefined;
+        temp.imgLink = el.produit ? el.produit.imgLink : undefined ;
         temp.produitName = el.produit ? el.produit.name: undefined ;
         temp.qte = el.qte;
         res.push(temp);
       });
       
       return res;
-    }
+    } 
 
     editItem(item:any){
       alert("edit "+ item.couresRaw.id);
       
-// eslint-disable-next-line no-console
-      console.log(item);
+      // eslint-disable-next-line no-console
+      console.log(item,this.selected);
     }
     deleteItem(item:any){
       alert("delete ");

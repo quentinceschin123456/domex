@@ -19,7 +19,7 @@
         </v-btn>
     </div>
     <div v-show="isActiveMode"> 
-       <v-btn icon @click="buyHandler">
+       <v-btn color="transparent"  @click="validBag">
           finish
         </v-btn>
     </div>
@@ -31,7 +31,6 @@
 <!-- <CourseRow></CourseRow> -->
 <DataTableProduct
   :selected="selectedProduct"
-  :headers="headers" 
   :courseRowList="courseList.listeCourseRaw"
   :isOnBuy="isActiveMode">
   </DataTableProduct>
@@ -65,20 +64,18 @@ new CourseRow(1,new Produit(1,"Patate",
 
 private isActiveMode:boolean = false;
 
-private selectedProduct = []
-get headers(){
-  return [
-        { text: 'Image', value: 'imgLink' },
-        { text: 'Produit', value: 'produitName' },
-        { text: 'Quantité', value: 'qte' },
-        { text: 'Actions', value: 'action', sortable: false },
-      ]
-}
+private selectedProduct = [];
 
 buyHandler(){
   this.isActiveMode = !this.isActiveMode;
   return this.isActiveMode;
 }
+
+validBag(){
+  // eslint-disable-next-line no-console
+  console.log(this.selectedProduct);
+}
+
 add(){
   if (this.courseList.listeCourseRaw){
     this.courseList.listeCourseRaw.push(new CourseRow(1,new Produit(1,"Patate",
