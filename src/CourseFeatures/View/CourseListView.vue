@@ -1,5 +1,9 @@
 <template>
 <v-layout justify-center align-center>
+
+  <label>
+    {{ selectedProduct}}
+  </label>
   <v-card>
     <v-app-bar
         color="deep-purple accent-4"
@@ -74,6 +78,7 @@ buyHandler(){
 validBag(){
   // eslint-disable-next-line no-console
   console.log(this.selectedProduct);
+  this.buyHandler();
 }
 
 add(){
