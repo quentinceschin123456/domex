@@ -13,6 +13,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import RecetteComponent from '../Component/RecetteComponent.vue'
 import { Action,Getter } from 'vuex-class';
 import { Recette, Ingredient, IngredientRow } from '../data-access';
+import { UniteEnum } from '@/common/model/UniteEnum';
 
 @Component({
   name: 'RecetteList'
@@ -21,8 +22,8 @@ import { Recette, Ingredient, IngredientRow } from '../data-access';
 export default class RecetteListView extends Vue {
   @Getter('listeRecette', { namespace: 'courselist' }) listeRecette!: Recette[];
  liste: IngredientRow[] = [
-   new IngredientRow(new Ingredient("tomate"),3,1),
-   new IngredientRow(new Ingredient("fromage"),1,2),
+   new IngredientRow(new Ingredient("tomate"),3,1,UniteEnum.unite),
+   new IngredientRow(new Ingredient("fromage"),1,2,UniteEnum.kilogramme),
    ];
 
    recettes: Recette[] = [
