@@ -22,8 +22,8 @@ import { UniteEnum } from '@/common/model/UniteEnum';
 export default class RecetteListView extends Vue {
   @Getter('listeRecette', { namespace: 'courselist' }) listeRecette!: Recette[];
  liste: IngredientRow[] = [
-   new IngredientRow(new Ingredient("tomate"),3,1,UniteEnum.unite),
-   new IngredientRow(new Ingredient("fromage"),1,2,UniteEnum.kilogramme),
+   new IngredientRow(new Ingredient("tomate"),3,UniteEnum.unite),
+   new IngredientRow(new Ingredient("fromage"),1,UniteEnum.kilogramme),
    ];
 
    recettes: Recette[] = [

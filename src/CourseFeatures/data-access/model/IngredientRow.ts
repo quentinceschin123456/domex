@@ -11,7 +11,7 @@ export class IngredientRow {
     public unite:UniteEnum| undefined;
 
     
-    constructor(ingredient:Ingredient,qte:number,id?:number,unite:UniteEnum){
+    constructor(ingredient:Ingredient,qte:number,unite:UniteEnum,id?:number){
         this.id = id;
         this.ingredient = ingredient;
         this.qte = qte;

@@ -8,7 +8,7 @@ export class ImgResolver {
         }
     }
     
-    public static getImage(key:string): Image | undefined{
+    public static getImage(key:string): HTMLImageElement | undefined{
         return this.ImgDico[key];
     }
 }
