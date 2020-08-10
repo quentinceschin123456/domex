@@ -1,9 +1,9 @@
 <template>
 <v-layout justify-center align-center>
 
-  <label>
+  <!-- <label>
     {{ selectedProduct}}
-  </label>
+  </label> -->
   <v-card>
     <v-app-bar
         color="deep-purple accent-4"

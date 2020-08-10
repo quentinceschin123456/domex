@@ -6,15 +6,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+ import { Component, Vue }               from 'vue-property-decorator';
+import ImgResolver from './common/services/ImgResolver';
 
 
-export default Vue.extend({
-  name: 'App',
-
-
-  data: () => ({
-    //
-  }),
-});
+  @Component({
+    name: 'app'
+  })
+  export default class App extends Vue {
+      created() {
+        //ImgResolver
+      }
+}
 </script>

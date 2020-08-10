@@ -1,4 +1,4 @@
-export class ImgResolver {
+export default class ImgResolver {
     protected static ImgDico:any = {}
 
     public static registerImg(key:string,imgUrl:string){

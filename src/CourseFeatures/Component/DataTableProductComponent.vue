@@ -56,6 +56,7 @@ export default class DataTableProductComponent extends Vue {
 
     @Prop() courseRowList!: CourseRow[] ;
     @Prop() isOnBuy:boolean = false;
+    @Prop() isOnEdit:boolean = false;
     @Prop() selected:any;
 
     get headers(){
