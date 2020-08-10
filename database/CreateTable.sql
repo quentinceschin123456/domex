@@ -1,5 +1,7 @@
 Create table Groupe(
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
+    nom varchar(255)
+
 );
 
 Create table User(
@@ -10,10 +12,16 @@ Create table User(
 Create table Compte(
     id SERIAL PRIMARY KEY,
     idUser int,
+    idRole int
     password varchar(255),
     login varchar(255),
 
     foreign key idUser references User(id)
+    foreign key idRole references Role(id)
+);
+Create table Role(
+    id SERIAL PRIMARY KEY,
+    nom varchar(255)
 );
 
 Create table GroupeRegister(
@@ -34,9 +42,6 @@ Create table CourseRaw(
     id SERIAL PRIMARY KEY
 );
 
-Create table Recette(
-    id SERIAL PRIMARY KEY
-);
 
 Create table Ingredient(
     id SERIAL PRIMARY KEY
