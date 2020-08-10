@@ -27,6 +27,7 @@ import { Component, Vue ,Prop } from 'vue-property-decorator';
 import { Getter, Action } from 'vuex-class';
 
 import { CourseList, Recette, Ingredient,IngredientRow } from '../data-access';
+import { UniteEnum } from '@/common/model/UniteEnum';
 
 @Component({
   name: 'IngredientRow'
@@ -38,7 +39,7 @@ export default class IngredientRowComponent extends Vue {
     @Prop(IngredientRow) ingredientRaw!: IngredientRow;
 
     created(){
-      this.ingredientRaw = new IngredientRow( new Ingredient("fro"),2);
+      this.ingredientRaw = new IngredientRow( new Ingredient("fro"),2,UniteEnum.unite);
     }
 }
 </script>

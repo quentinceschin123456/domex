@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import CourseListView from '../CourseFeatures/View/CourseListView.vue'
-import RecetteListView from '../CourseFeatures/View/RecetteListView.vue'
-import CourseRowComponent from '../CourseFeatures/Component/CourseRowComponent.vue'
+import Home from '@/common/views/Home.vue'
+import CourseListView from '@/CourseFeatures/View/CourseListView.vue'
+import RecetteListView from '@/CourseFeatures/View/RecetteListView.vue'
+import CourseRowComponent from '@/CourseFeatures/Component/CourseRowComponent.vue'
 
 Vue.use(VueRouter)
 

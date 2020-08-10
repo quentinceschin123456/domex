@@ -56,30 +56,16 @@ export default class DataTableProductComponent extends Vue {
 
     @Prop() courseRowList!: CourseRow[] ;
     @Prop() isOnBuy:boolean = false;
-    @Prop() selected!:any;
+    @Prop() selected:any;
 
-      get headers(){
-        return [
-              { text: 'Image', value: 'produit.imgLink' },
-              { text: 'Produit', value: 'produit.name' },
-              { text: 'Quantité', value: 'qte' },
-              { text: 'Actions', value: 'action', sortable: false },
-            ]
-      }
-
-    get convertObjectTodatas(){
-      var res:any = [];
-      this.courseRowList.forEach(el => {
-        var temp:any = {};
-        temp.couresRaw = el; // permettra de garder la ref à l'objet
-        temp.imgLink = el.produit ? el.produit.imgLink : undefined ;
-        temp.produitName = el.produit ? el.produit.name: undefined ;
-        temp.qte = el.qte;
-        res.push(temp);
-      });
-      
-      return res;
-    } 
+    get headers(){
+      return [
+            { text: 'Image', value: 'produit.imgLink' },
+            { text: 'Produit', value: 'produit.name' },
+            { text: 'Quantité', value: 'qte' },
+            { text: 'Actions', value: 'action', sortable: false },
+          ]
+    }
 
     editItem(item:any){
       alert("edit "+ item.couresRaw.id);
