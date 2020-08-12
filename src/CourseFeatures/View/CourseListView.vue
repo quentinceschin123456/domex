@@ -1,5 +1,8 @@
 <template>
-<v-layout justify-center align-center>
+<v-layout row wrap>
+  <SideMenu :sectionList="sectionList"></SideMenu>
+
+  <v-layout justify-center align-center>
 
   <!-- <label>
     {{ selectedProduct}}
@@ -40,6 +43,8 @@
   </DataTableProduct>
   </v-card>
   </v-layout>
+</v-layout>
+
 </template>
 
 <script lang="ts">
@@ -48,13 +53,16 @@ import CourseRowComponent from '../Component/CourseRowComponent.vue'
 import DataTableProductComponent from '../Component/DataTableProductComponent.vue'
 import { CourseList, CourseRow, Produit } from '../data-access';
 import { UniteEnum } from '@/common/model/UniteEnum';
+import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
+import { ItemMenu, SectionMenu } from '@/common/menu/model';
 
 
 @Component({
   name: 'CourseList',
   components: {
     CourseRowComponent,
-    DataTableProductComponent
+    DataTableProductComponent,
+    SideMenuComponent
   }
 })
 
@@ -71,6 +79,9 @@ private isActiveMode:boolean = false;
 
 private selectedProduct = [];
 
+private sectionList = [
+  new SectionMenu("test",undefined,"test")
+];
 buyHandler(){
   this.isActiveMode = !this.isActiveMode;
   return this.isActiveMode;
