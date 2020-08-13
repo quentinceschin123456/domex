@@ -1,10 +1,11 @@
 <template>
- <v-navigation-drawer>
-      <v-list>
+ <v-navigation-drawer
+  :v-model="true"
+  :permanent="true">
+      <v-list v-for="section in sectionList" :key="section.name">
       <v-list-group
-        :v-for="section in sectionList"
-       
-      >
+       :prepend-icon="section.icone"
+        >
         <template v-slot:activator>
           <v-list-item-content>
             <v-list-item-title v-text="section.name"></v-list-item-title>
@@ -12,12 +13,11 @@
         </template>
 
         <v-list-item
-          :v-for="item in section.items"
-         
+          :v-if=" section && section.items"
+          v-for="item in section.items"
+          :key="item.name"
         >
-          <v-list-item-content>
-            <v-list-item-title v-text="item.name"></v-list-item-title>
-          </v-list-item-content>
+          <ItemMenu :section="item"></ItemMenu>
         </v-list-item>
       </v-list-group>
     </v-list>
@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { Component, Vue ,Prop } from 'vue-property-decorator';
-import {SectionMenu} from '@/common/menu/model'
+import {ItemMenu} from '@/common/menu/model'
 
 @Component({
   name: 'SideMenu'

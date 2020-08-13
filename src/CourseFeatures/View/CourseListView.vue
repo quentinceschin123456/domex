@@ -2,12 +2,12 @@
 <v-layout row wrap>
   <SideMenu :sectionList="sectionList"></SideMenu>
 
-  <v-layout justify-center align-center>
+  <!-- <v-layout justify-center align-center> -->
 
   <!-- <label>
     {{ selectedProduct}}
   </label> -->
-  <v-card>
+  <!-- <v-card>
     <v-app-bar
         color="deep-purple accent-4"
         dark
@@ -34,16 +34,16 @@
           
         
        
-      </v-app-bar>
+      </v-app-bar> -->
 <!-- <CourseRow></CourseRow> -->
-<DataTableProduct
+<!-- <DataTableProduct
   :selected="selectedProduct"
   :courseRowList="courseList.listeCourseRaw"
   :isOnBuy="isActiveMode">
   </DataTableProduct>
   </v-card>
-  </v-layout>
-</v-layout>
+  </v-layout>-->
+</v-layout> 
 
 </template>
 
@@ -80,7 +80,7 @@ private isActiveMode:boolean = false;
 private selectedProduct = [];
 
 private sectionList = [
-  new SectionMenu("test",undefined,"test")
+  new SectionMenu("test",undefined,"mdi-home")
 ];
 buyHandler(){
   this.isActiveMode = !this.isActiveMode;
@@ -104,6 +104,10 @@ remove(){
   this.courseList.listeCourseRaw = [];
 }
 
+created(){
+  this.sectionList[0].items[0] = new ItemMenu("sousmenu1",undefined,"mdi-home")
+  this.sectionList[0].items[1] = new ItemMenu("sousmenu2",undefined,"mdi-home")
+}
 }
 </script>
 
