@@ -9,10 +9,11 @@ import CourseRowComponent from './CourseFeatures/Component/CourseRowComponent.vu
 import IngredientRowComponent from './CourseFeatures/Component/IngredientRowComponent.vue';
 import DataTableProductComponent from './CourseFeatures/Component/DataTableProductComponent.vue';
 
-import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
+import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue';
+import ItemMenuComponent from '@/common/menu/component/ItemMenuComponent.vue';
 
 import RecetteListView from './CourseFeatures/View/RecetteListView.vue';
-import CourseListView from './CourseFeatures/View/CourseListView.vue'
+import CourseListView from './CourseFeatures/View/CourseListView.vue';
 
 
 Vue.config.productionTip = false
@@ -24,7 +25,8 @@ Vue.component('RecetteList',RecetteListView);
 Vue.component('IngredientRow',IngredientRowComponent);
 Vue.component('DataTableProduct',DataTableProductComponent);
 
-Vue.component('SideMenu',SideMenuComponent)
+Vue.component('SideMenu',SideMenuComponent);
+Vue.component('ItemMenu',ItemMenuComponent);
 new Vue({
   router,
   store,

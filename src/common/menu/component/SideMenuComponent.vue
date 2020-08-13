@@ -34,7 +34,7 @@ import {SectionMenu} from '@/common/menu/model'
 
 export default class SideMenuComponent extends Vue {
    
-  @Prop() sectionList!: SectionMenu[];
+  @Prop() sectionList!: ItemMenu[];
 }
 </script>
 
