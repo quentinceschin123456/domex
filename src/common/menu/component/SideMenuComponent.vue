@@ -22,7 +22,7 @@
         </v-list-group>
       </div>
       <div v-else>
-      <v-list-item >
+      <v-list-item :href="section.link">
            <v-list-item-icon>
           <v-icon>{{section.icone}}</v-icon>
         </v-list-item-icon>
