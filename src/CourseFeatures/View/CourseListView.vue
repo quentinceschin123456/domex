@@ -105,8 +105,10 @@ remove(){
 }
 
 created(){
-  this.sectionList[0].items[0] = new ItemMenu("sousmenu1",undefined,"mdi-home")
-  this.sectionList[0].items[1] = new ItemMenu("sousmenu2",undefined,"mdi-home")
+  let sousm1 = new SectionMenu("sousmenu1",undefined,"mdi-home")
+  sousm1.items[0] = new ItemMenu("page","/test",undefined,"mdi-home")
+  this.sectionList[0].items[0] = sousm1
+  this.sectionList[0].items[1] = new ItemMenu("sousmenu2","/test",undefined,"mdi-home")
 }
 }
 </script>
