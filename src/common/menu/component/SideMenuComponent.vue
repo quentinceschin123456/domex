@@ -1,9 +1,23 @@
 <template>
  <v-navigation-drawer
-  :v-model="true"
-  :permanent="true">
-      <v-list v-for="section in sectionList" :key="section.name">
-       
+  :v-model="drawer"
+      :mini-variant.sync="mini"
+      permanent>
+      <v-flex>
+      <v-icon>
+        {{menu.icone}}
+      </v-icon>
+      <v-label>
+        {{menu.name}}
+      </v-label>
+      <v-btn
+          icon
+          @click.stop="mini = !mini"
+        >
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn>
+        </v-flex>
+      <v-list v-for="section in menu.sectionList" :key="section.name"> 
       <div v-if="section && section.items && section.items.length > 0"> 
         <v-list-group
         :prepend-icon="section.icone"
@@ -37,7 +51,7 @@
 
 <script lang="ts">
 import { Component, Vue ,Prop } from 'vue-property-decorator';
-import {ItemMenu} from '@/common/menu/model'
+import {ItemMenu, Menu} from '@/common/menu/model'
 
 @Component({
   name: 'SideMenu'
@@ -45,7 +59,11 @@ import {ItemMenu} from '@/common/menu/model'
 
 export default class SideMenuComponent extends Vue {
    
-  @Prop() sectionList!: ItemMenu[];
+  @Prop() menu!: Menu;
+
+  private drawer:boolean = true;
+ 
+  private mini:boolean = true;
 }
 </script>
 

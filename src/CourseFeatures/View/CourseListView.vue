@@ -1,13 +1,13 @@
 <template>
 <v-layout row wrap>
-  <SideMenu :sectionList="sectionList"></SideMenu>
+  <SideMenu :menu="menu"></SideMenu>
 
-  <!-- <v-layout justify-center align-center> -->
+  <v-layout justify-center align-center>
 
   <!-- <label>
     {{ selectedProduct}}
   </label> -->
-  <!-- <v-card>
+  <v-card>
     <v-app-bar
         color="deep-purple accent-4"
         dark
@@ -34,15 +34,15 @@
           
         
        
-      </v-app-bar> -->
+      </v-app-bar>
 <!-- <CourseRow></CourseRow> -->
-<!-- <DataTableProduct
+<DataTableProduct
   :selected="selectedProduct"
   :courseRowList="courseList.listeCourseRaw"
   :isOnBuy="isActiveMode">
   </DataTableProduct>
   </v-card>
-  </v-layout>-->
+  </v-layout>
 </v-layout> 
 
 </template>
@@ -54,7 +54,7 @@ import DataTableProductComponent from '../Component/DataTableProductComponent.vu
 import { CourseList, CourseRow, Produit } from '../data-access';
 import { UniteEnum } from '@/common/model/UniteEnum';
 import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
-import { ItemMenu, SectionMenu } from '@/common/menu/model';
+import { ItemMenu, SectionMenu, Menu } from '@/common/menu/model';
 
 
 @Component({
@@ -79,9 +79,16 @@ private isActiveMode:boolean = false;
 
 private selectedProduct = [];
 
-private sectionList = [
-  new SectionMenu("test","/test",undefined,"mdi-home")
-];
+private menu = new Menu(undefined,undefined, [
+  new SectionMenu("h1","/test",undefined,"mdi-home",[
+   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
+   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
+  ]),
+   new SectionMenu("h1","/test",undefined,"account_circle",[
+   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
+   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
+  ])
+])
 buyHandler(){
   this.isActiveMode = !this.isActiveMode;
   return this.isActiveMode;
@@ -104,12 +111,6 @@ remove(){
   this.courseList.listeCourseRaw = [];
 }
 
-created(){
-  let sousm1 = new SectionMenu("sousmenu1","/test",undefined,"mdi-home")
-  sousm1.items[0] = new ItemMenu("page","/test",undefined,"mdi-home")
-  this.sectionList[0].items[0] = sousm1
-  this.sectionList[0].items[1] = new ItemMenu("sousmenu2","/test",undefined,"mdi-home")
-}
 }
 </script>
 

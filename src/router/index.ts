@@ -4,14 +4,16 @@ import Home from '@/common/views/Home.vue'
 import CourseListView from '@/CourseFeatures/View/CourseListView.vue'
 import RecetteListView from '@/CourseFeatures/View/RecetteListView.vue'
 import CourseRowComponent from '@/CourseFeatures/Component/CourseRowComponent.vue'
+import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
+import MainView from '@/common/components/MainView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'MainView',
+    component: MainView
   },
   {
     path: '/test',

@@ -14,7 +14,7 @@ import ItemMenuComponent from '@/common/menu/component/ItemMenuComponent.vue';
 
 import RecetteListView from './CourseFeatures/View/RecetteListView.vue';
 import CourseListView from './CourseFeatures/View/CourseListView.vue';
-
+import MainView from '@/common/components/MainView.vue'
 
 Vue.config.productionTip = false
 
@@ -24,6 +24,7 @@ Vue.component('Recette',RecetteComponent);
 Vue.component('RecetteList',RecetteListView);
 Vue.component('IngredientRow',IngredientRowComponent);
 Vue.component('DataTableProduct',DataTableProductComponent);
+Vue.component('default-layout',MainView);
 
 Vue.component('SideMenu',SideMenuComponent);
 Vue.component('ItemMenu',ItemMenuComponent);
