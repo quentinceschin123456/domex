@@ -1,8 +1,12 @@
 <template>
   <v-container>
      <v-layout>
+       <v-flex>
       <SideMenu :menu="menu"></SideMenu>
-      <slot></slot>
+      </v-flex>
+      <v-flex>
+        <slot></slot>
+      </v-flex>
       </v-layout>
 
   </v-container>
