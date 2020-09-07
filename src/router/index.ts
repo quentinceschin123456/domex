@@ -12,8 +12,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'MainView',
-    component: MainView
+    name: 'home',
+    component: CourseListView
   },
   {
     path: '/test',

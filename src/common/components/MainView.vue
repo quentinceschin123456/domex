@@ -1,22 +1,37 @@
 <template>
-     <v-app id="app">
-         <v-slot></v-slot>
-     </v-app>
+  <v-container>
+     <v-layout>
+      <SideMenu :menu="menu"></SideMenu>
+      <slot></slot>
+      </v-layout>
 
-
+  </v-container>
      <!-- https://medium.com/thewarmupio/bref-voici-comment-cr%C3%A9er-un-syst%C3%A8me-de-layout-avec-vue-et-vue-router-44673f132e74 -->
 </template>
 
 <script lang="ts">
 import { Component, Vue ,Prop } from 'vue-property-decorator';
-
+import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
+import { Menu, SectionMenu, ItemMenu } from '../menu';
 
 @Component({
-  name: 'MainView'
+  name: 'MainView',
+  components: {
+    SideMenuComponent
+  }
 })
 
 export default class MainView extends Vue {
-   
+   private menu = new Menu(undefined,undefined, [
+  new SectionMenu("h1","/test",undefined,"mdi-home",[
+   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
+   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
+  ]),
+   new SectionMenu("h1","/test",undefined,"account_circle",[
+   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
+   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
+  ])
+])
 
 }
 </script>

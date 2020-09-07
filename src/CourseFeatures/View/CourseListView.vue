@@ -1,6 +1,5 @@
 <template>
 <v-layout row wrap>
-  <SideMenu :menu="menu"></SideMenu>
 
   <v-layout justify-center align-center>
 
@@ -79,16 +78,7 @@ private isActiveMode:boolean = false;
 
 private selectedProduct = [];
 
-private menu = new Menu(undefined,undefined, [
-  new SectionMenu("h1","/test",undefined,"mdi-home",[
-   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
-   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
-  ]),
-   new SectionMenu("h1","/test",undefined,"account_circle",[
-   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
-   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
-  ])
-])
+
 buyHandler(){
   this.isActiveMode = !this.isActiveMode;
   return this.isActiveMode;
