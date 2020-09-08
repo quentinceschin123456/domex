@@ -27,14 +27,20 @@ echo "export const "${storeName^}"Getter:I"${storeName^}"Getter = {
 };" >> getter.ts
 
 touch index.ts
-echo "export * from './action';" >> index.ts
-echo "export * from './module';" >> index.ts
-echo "export * from './mutation';" >> index.ts
-echo "export * from './getter';" >> index.ts
-echo "export * from './state';" >> index.ts
+echo "export * from './action';
+      export * from './module';
+      export * from './mutation';
+      export * from './getter';
+      export * from './state';" >> index.ts
 
 touch module.ts
-echo "export const "${storeName}": Module<I"${storeName^}"State ,I"${storeName^}"State> = {
+echo "import { ${storeName}Action } from './action';
+import { ${storeName}Getter } from './getter';
+import { I${storeName}State, MenuDefaultState } from './state';
+import { Module } from 'vuex';
+import { ${storeName}Mutation } from './mutation';
+
+export const "${storeName}": Module<I"${storeName^}"State ,I"${storeName^}"State> = {
     namespaced: true,
     actions:    {
         ...${storeName^}Action,
