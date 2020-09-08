@@ -1,7 +1,7 @@
 <template>
   <v-container>
      <v-layout>
-       <v-flex>
+       <v-flex id="side-menu">
       <SideMenu :menu="menu"></SideMenu>
       </v-flex>
       <v-flex>
@@ -40,5 +40,7 @@ export default class MainView extends Vue {
 }
 </script>
 <style scoped>
-
+.side-menu{
+  width:100%;
+}
 </style>

@@ -5,3 +5,6 @@ pour l'enregistement des modules: App -> ecouteur de menu ( register new submenu
 
 
 trouver un moyen de sortir la création du menu du composant générique, utilisation de services ? de listeners ? de store ? ...
+ -> utilisation de store pour le menu
+
+faire un script pour générer un store vierge / un module / un composant vue

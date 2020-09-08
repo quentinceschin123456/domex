@@ -1,6 +1,6 @@
 {
     "name": "application",
-    "version": "0.1.0",
+    "version": "0.0.0",
     "private": true,
     "scripts": {
         "serve": "vue-cli-service serve",
@@ -65,17 +65,15 @@
         "parserOptions": {
             "parser": "@typescript-eslint/parser"
         },
-        "overrides": [
-            {
-                "files": [
-                    "**/__tests__/*.{j,t}s?(x)",
-                    "**/tests/unit/**/*.spec.{j,t}s?(x)"
-                ],
-                "env": {
-                    "jest": true
-                }
+        "overrides": [{
+            "files": [
+                "**/__tests__/*.{j,t}s?(x)",
+                "**/tests/unit/**/*.spec.{j,t}s?(x)"
+            ],
+            "env": {
+                "jest": true
             }
-        ]
+        }]
     },
     "postcss": {
         "plugins": {
