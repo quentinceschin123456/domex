@@ -4,6 +4,8 @@ export interface IMenuAction {
     createMenu(commit: any,payload:any):any;
     addNewSection(commit: any,section:SectionMenu):any;
     addNewItem(commit: any,item:ItemMenu):any;
+    
+    inverseMenuActive(commit: any,payload:any):any;
 }
 export const MenuAction:IMenuAction = {
     
@@ -23,5 +25,9 @@ export const MenuAction:IMenuAction = {
 
     addNewItem({ commit, dispatch },item:ItemMenu){
 
+    },
+
+    inverseMenuActive({ commit, dispatch }){
+        commit('INVERSE_MENU_ACTIVE_VALUE');
     }
 };

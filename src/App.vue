@@ -21,14 +21,32 @@ import { Menu, ItemMenu, SectionMenu } from './common/menu';
       
       created() {
         //ImgResolver
-        let sectionList:ItemMenu[] = [];
-        sectionList.push(new ItemMenu("Liste de Course","/courselist"))
-        sectionList.push(new ItemMenu("Recettes","/recette"))
-        this.createMenu({mainName:"menu principale",icone:"test",sectionlist:sectionList});
+        this.generateMenu();
       }
 
       get layout(){
         return (this.$route.meta.layout || this.default_layout)+"-layout";
+      }
+
+      generateMenu(){
+        let sectionList:ItemMenu[] = [];
+        sectionList.push(new ItemMenu("Liste de Course","/courselist"))
+        sectionList.push(new ItemMenu("Recettes","/recette"))
+        sectionList.push(new ItemMenu("Liste de tâches","/todoList"))
+        sectionList.push(new ItemMenu("Calendrier","/agenda"))
+        sectionList.push(new SectionMenu("Consignes","/agenda"))
+        this.createMenu({mainName:"menu principale",icone:"test",sectionlist:sectionList}); 
+      
+        //let menu = new Menu(undefined,undefined, [
+        //   new SectionMenu("h1","/test",undefined,"mdi-home",[
+        //    new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
+        //    new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
+        //   ]),
+        //    new SectionMenu("h1","/test",undefined,"account_circle",[
+        //    new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
+        //    new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
+        //   ])
+        // ])
       }
 }
 </script>

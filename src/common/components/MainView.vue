@@ -1,8 +1,8 @@
 <template>
   <v-container>
      <v-layout>
-       <v-flex :v-if="isMenuOK" id="side-menu">
-      <SideMenu :menu="menu"></SideMenu>
+       <v-flex id="side-menu">
+      <SideMenu></SideMenu>
       </v-flex>
       <v-flex>
         <slot></slot>
@@ -16,8 +16,6 @@
 <script lang="ts">
 import { Component, Vue ,Prop } from 'vue-property-decorator';
 import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
-import { Menu, SectionMenu, ItemMenu } from '../menu';
-import { Getter } from 'vuex-class';
 
 @Component({
   name: 'MainView',
@@ -28,22 +26,7 @@ import { Getter } from 'vuex-class';
 
 export default class MainView extends Vue {
 
-    @Getter("getMenu",{namespace:"menu"}) menu!:Menu;
-
-//    private menu = new Menu(undefined,undefined, [
-//   new SectionMenu("h1","/test",undefined,"mdi-home",[
-//    new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
-//    new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
-//   ]),
-//    new SectionMenu("h1","/test",undefined,"account_circle",[
-//    new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
-//    new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
-//   ])
-// ])
-
-get isMenuOK(){
-  return this.menu && this.menu !== null; 
-}
+ 
 }
 </script>
 <style scoped>

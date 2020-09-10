@@ -9,6 +9,8 @@ export interface IMenuMutation {
 
     DELETE_MENU(state: IMenuState):any;
 
+
+    INVERSE_MENU_ACTIVE_VALUE(state:IMenuState):any;
 }
 export const MenuMutation:IMenuMutation = {
     ADD_NEW_MENU:(state: IMenuState,menu:Menu) => {
@@ -27,5 +29,10 @@ export const MenuMutation:IMenuMutation = {
 
       DELETE_MENU: (state: IMenuState) => {
           state.menu = undefined;
+      },
+
+      INVERSE_MENU_ACTIVE_VALUE: (state: IMenuState) =>{
+          state.isActive = !state.isActive;
       }
+
 };
