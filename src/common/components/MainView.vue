@@ -1,8 +1,8 @@
 <template>
   <v-container>
      <v-layout>
-       <v-flex>
-      <SideMenu :menu="menu"></SideMenu>
+       <v-flex id="side-menu">
+      <SideMenu></SideMenu>
       </v-flex>
       <v-flex>
         <slot></slot>
@@ -16,7 +16,6 @@
 <script lang="ts">
 import { Component, Vue ,Prop } from 'vue-property-decorator';
 import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
-import { Menu, SectionMenu, ItemMenu } from '../menu';
 
 @Component({
   name: 'MainView',
@@ -26,19 +25,12 @@ import { Menu, SectionMenu, ItemMenu } from '../menu';
 })
 
 export default class MainView extends Vue {
-   private menu = new Menu(undefined,undefined, [
-  new SectionMenu("h1","/test",undefined,"mdi-home",[
-   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
-   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
-  ]),
-   new SectionMenu("h1","/test",undefined,"account_circle",[
-   new SectionMenu("h2-sousmenu1","/test",undefined,"mdi-home",[ new ItemMenu("page","/test",undefined,"mdi-home")]),
-   new ItemMenu("h2-sousmenu2","/test",undefined,"mdi-home")
-  ])
-])
 
+ 
 }
 </script>
 <style scoped>
-
+.side-menu{
+  width:100%;
+}
 </style>

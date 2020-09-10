@@ -1,6 +1,7 @@
 <template>
  <v-navigation-drawer
   :v-model="drawer"
+  :v-if="isMenuOK"
       :mini-variant.sync="mini"
       permanent>
       <v-flex>
@@ -12,7 +13,7 @@
       </v-label>
       <v-btn
           icon
-          @click.stop="mini = !mini"
+          @click.stop="inverseMenuActive"
         >
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
@@ -52,6 +53,7 @@
 <script lang="ts">
 import { Component, Vue ,Prop } from 'vue-property-decorator';
 import {ItemMenu, Menu} from '@/common/menu/model'
+import { Getter, namespace, Action } from 'vuex-class';
 
 @Component({
   name: 'SideMenu'
@@ -59,11 +61,15 @@ import {ItemMenu, Menu} from '@/common/menu/model'
 
 export default class SideMenuComponent extends Vue {
    
-  @Prop() menu!: Menu;
-
+  @Getter("isMenuActive",{namespace:"menu"}) mini!:boolean;
+  @Getter("getMenu",{namespace:"menu"}) menu!:Menu;
+  @Action("inverseMenuActive",{namespace:"menu"}) inverseMenuActive:any
   private drawer:boolean = true;
- 
-  private mini:boolean = true;
+
+  get isMenuOK(){
+    return this.menu && this.menu !== null; 
+  }
+
 }
 </script>
 
