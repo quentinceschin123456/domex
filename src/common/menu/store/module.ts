@@ -1,6 +1,6 @@
 import { MenuAction } from './action';
 import { MenuGetter } from './getter';
-import { IMenuState, MenuDefaultState } from './state';
+import { MenuDefaultState, IMenuState } from './state';
 import { Module } from 'vuex';
 import { MenuMutation } from './mutation';
 

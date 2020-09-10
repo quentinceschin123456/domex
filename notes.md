@@ -8,3 +8,6 @@ trouver un moyen de sortir la création du menu du composant générique, utilis
  -> utilisation de store pour le menu
 
 faire un script pour générer un store vierge / un module / un composant vue
+
+
+faire une gestion des errors génériques / des erreurs vuejs / des erreurs HTTP ,...

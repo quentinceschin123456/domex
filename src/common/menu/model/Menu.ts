@@ -10,4 +10,8 @@ export class Menu {
         this.icone = icone?icone : "menu";
         this.sectionList = sectionList ? sectionList :[]
     }
+
+    public addNewItem(item:ItemMenu){
+        this.sectionList.push(item);
+    }
 }
