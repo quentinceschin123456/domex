@@ -9,6 +9,7 @@
 
 * faire un script pour générer un store vierge / un module / un composant vue
 
+* faire en sorte que l'on ne recharge pas le site lorsque l'on clique dans le menu
 
 * faire une gestion des errors génériques / des erreurs vuejs / des erreurs HTTP ,...
 
