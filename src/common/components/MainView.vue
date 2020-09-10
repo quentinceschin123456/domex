@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
      <v-layout>
        <v-flex id="side-menu">
       <SideMenu></SideMenu>
@@ -7,6 +7,7 @@
       <v-flex>
         <slot></slot>
       </v-flex>
+      <!-- composant d'erreur générique -->
       </v-layout>
 
   </v-container>

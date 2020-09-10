@@ -15,7 +15,8 @@
           icon
           @click.stop="inverseMenuActive"
         >
-          <v-icon>mdi-chevron-left</v-icon>
+          <v-icon v-if="mini">mdi-chevron-left</v-icon>
+          <v-icon v-if="!mini">mdi-chevron-right</v-icon>
         </v-btn>
         </v-flex>
       <v-list v-for="section in menu.sectionList" :key="section.name"> 

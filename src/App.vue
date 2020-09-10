@@ -35,7 +35,7 @@ import { Menu, ItemMenu, SectionMenu } from './common/menu';
         sectionList.push(new ItemMenu("Liste de tâches","/todoList"))
         sectionList.push(new ItemMenu("Calendrier","/agenda"))
         sectionList.push(new SectionMenu("Consignes","/agenda"))
-        this.createMenu({mainName:"menu principale",icone:"test",sectionlist:sectionList}); 
+        this.createMenu({mainName:"menu principale",sectionlist:sectionList}); 
       
         //let menu = new Menu(undefined,undefined, [
         //   new SectionMenu("h1","/test",undefined,"mdi-home",[
