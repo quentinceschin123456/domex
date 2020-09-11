@@ -29,12 +29,17 @@ import { Menu, ItemMenu, SectionMenu } from './common/menu';
       }
 
       generateMenu(){
+        let adminItem: ItemMenu[] = [];
+        adminItem.push(new ItemMenu("compte","/compte",undefined,"account_circle"))
+
+
         let sectionList:ItemMenu[] = [];
         sectionList.push(new ItemMenu("Liste de Course","/courselist"))
         sectionList.push(new ItemMenu("Recettes","/recette"))
         sectionList.push(new ItemMenu("Liste de tâches","/todoList"))
         sectionList.push(new ItemMenu("Calendrier","/agenda"))
         sectionList.push(new SectionMenu("Consignes","/agenda"))
+        sectionList.push(new SectionMenu("Administatration","/agenda",undefined,undefined,adminItem))
         this.createMenu({mainName:"menu principale",sectionlist:sectionList}); 
       
         //let menu = new Menu(undefined,undefined, [

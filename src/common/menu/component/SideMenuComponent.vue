@@ -1,9 +1,9 @@
 <template>
  <v-navigation-drawer
-  :v-model="drawer"
-  :v-if="isMenuOK"
-      :mini-variant.sync="mini"
-      permanent>
+	:v-model="drawer"
+	:v-if="isMenuOK"
+	:mini-variant.sync="mini"
+	permanent>
       <v-flex>
       <v-icon>
         {{menu.icone}}
