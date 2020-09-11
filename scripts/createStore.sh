@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
+if [ $# -gt 0 ] 
+then 
+    storeName = $1
+else
+    echo enter the store name
+    read storeName
+fi
 
-echo enter the store name
-read storeName
+
 
 mkdir store
 cd store
@@ -28,10 +34,10 @@ echo "export const "${storeName^}"Getter:I"${storeName^}"Getter = {
 
 touch index.ts
 echo "export * from './action';
-      export * from './module';
-      export * from './mutation';
-      export * from './getter';
-      export * from './state';" >> index.ts
+export * from './module';
+export * from './mutation';
+export * from './getter';
+export * from './state';" >> index.ts
 
 touch module.ts
 echo "import { ${storeName}Action } from './action';
