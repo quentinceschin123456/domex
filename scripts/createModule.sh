@@ -48,6 +48,7 @@ echo souhaitez-vous un store vuex ? o/n
 read answer
 if [ $answer = 'o' ] 
 then
+    cd $modulePath/$moduleName/data-access/
     $scriptPath/createStore.sh
     echo 'export * from ./store ' >> $modulePath/$moduleName/data-access/index.ts
 else 
