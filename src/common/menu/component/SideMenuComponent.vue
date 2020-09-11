@@ -1,6 +1,5 @@
 <template>
  <v-navigation-drawer
-	:v-model="drawer"
 	:v-if="isMenuOK"
 	:mini-variant.sync="mini"
 	permanent>
@@ -62,13 +61,17 @@ import { Getter, namespace, Action } from 'vuex-class';
 
 export default class SideMenuComponent extends Vue {
    
-  @Getter("isMenuActive",{namespace:"menu"}) mini!:boolean;
+  @Getter("isMenuActive",{namespace:"menu"}) isMenuActive!:boolean;
   @Getter("getMenu",{namespace:"menu"}) menu!:Menu;
   @Action("inverseMenuActive",{namespace:"menu"}) inverseMenuActive:any
-  private drawer:boolean = true;
+  
 
   get isMenuOK(){
     return this.menu && this.menu !== null; 
+  }
+
+  get mini():boolean{
+    return this.isMenuActive;
   }
 
 }
