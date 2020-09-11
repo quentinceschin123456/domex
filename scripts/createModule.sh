@@ -36,12 +36,14 @@ mkdir $moduleName/view
 
 mkdir $moduleName/data-access
 mkdir $moduleName/data-access/model
+echo 'export * from "."'>> $moduleName/data-access/model/index.ts
 mkdir $moduleName/data-access/service
+echo 'export * from "."'>> $moduleName/data-access/service/index.ts
 
 
 touch $moduleName/data-access/index.ts
-echo 'export * from ./model
-export * from ./service' >> $moduleName/data-access/index.ts
+echo 'export * from "./model"
+export * from "./service"' >> $moduleName/data-access/index.ts
 
 
 echo souhaitez-vous un store vuex ? o/n
@@ -50,15 +52,15 @@ if [ $answer = 'o' ]
 then
     cd $modulePath/$moduleName/data-access/
     $scriptPath/createStore.sh
-    echo 'export * from ./store ' >> $modulePath/$moduleName/data-access/index.ts
+    echo 'export * from "./store" ' >> $modulePath/$moduleName/data-access/index.ts
 else 
     echo le store ne sera pas créé
 fi
 
 cd $modulePath
 touch $moduleName/index.ts
-echo 'export * from ./component
-export * from ./view
-export * from data-access' >> $moduleName/index.ts
+echo 'export * from "./component"
+export * from "./view"
+export * from "./data-access"' >> $moduleName/index.ts
 
 
