@@ -7,6 +7,8 @@ import CourseRowComponent from '@/CourseFeatures/Component/CourseRowComponent.vu
 import SideMenuComponent from '@/common/menu/component/SideMenuComponent.vue'
 import MainView from '@/common/components/MainView.vue'
 
+import LoginPage from '@/common/admin/view/LoginPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +16,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: CourseListView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginPage
   },
   {
     path: '/test',

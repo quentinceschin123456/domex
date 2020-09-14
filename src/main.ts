@@ -16,6 +16,8 @@ import RecetteListView from './CourseFeatures/View/RecetteListView.vue';
 import CourseListView from './CourseFeatures/View/CourseListView.vue';
 import MainView from '@/common/components/MainView.vue'
 
+import LoginPage from'@/common/admin/view/LoginPage.vue';
+
 Vue.config.productionTip = false
 
 Vue.component('CourseRow', CourseRowComponent);
@@ -28,6 +30,8 @@ Vue.component('default-layout',MainView);
 
 Vue.component('SideMenu',SideMenuComponent);
 Vue.component('ItemMenu',ItemMenuComponent);
+
+Vue.component('LoginPage',LoginPage);
 new Vue({
   router,
   store,
