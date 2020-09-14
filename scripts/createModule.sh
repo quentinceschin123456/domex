@@ -31,9 +31,10 @@ cd $modulePath
 
 mkdir $moduleName
 mkdir $moduleName/component
-echo 'export * from "."'>> $moduleName/data-access/component/index.ts
+echo 'export * from "."'>> $moduleName/component/index.ts
 mkdir $moduleName/view
-echo 'export * from "."'>> $moduleName/data-access/view/index.ts
+echo 'export * from "."'>> $moduleName/view/index.ts
+
 mkdir $moduleName/data-access
 mkdir $moduleName/data-access/model
 echo 'export * from "."'>> $moduleName/data-access/model/index.ts
