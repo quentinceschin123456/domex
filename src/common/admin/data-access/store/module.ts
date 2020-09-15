@@ -1,8 +1,8 @@
-import { adminAction } from './action';
-import { adminGetter } from './getter';
-import { IadminState, MenuDefaultState } from './state';
+import { AdminAction } from './action';
+import { AdminGetter } from './getter';
+import { IAdminState,AdminDefaultState } from './state';
 import { Module } from 'vuex';
-import { adminMutation } from './mutation';
+import { AdminMutation } from './mutation';
 
 export const admin: Module<IAdminState ,IAdminState> = {
     namespaced: true,

@@ -40,11 +40,11 @@ export * from './getter';
 export * from './state';" >> index.ts
 
 touch module.ts
-echo "import { ${storeName}Action } from './action';
-import { ${storeName}Getter } from './getter';
-import { I${storeName}State, MenuDefaultState } from './state';
+echo "import { ${storeName^}Action } from './action';
+import { ${storeName^}Getter } from './getter';
+import { I${storeName^}State, ${storeName^}DefaultState } from './state';
 import { Module } from 'vuex';
-import { ${storeName}Mutation } from './mutation';
+import { ${storeName^}Mutation } from './mutation';
 
 export const "${storeName}": Module<I"${storeName^}"State ,I"${storeName^}"State> = {
     namespaced: true,
