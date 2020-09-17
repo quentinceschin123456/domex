@@ -8,15 +8,17 @@ Create table User(
     id SERIAL PRIMARY KEY,
     nom varchar(255),
     prenom varchar(255),
+    idRole int,
+    
+    foreign key idRole references Role(id)
 );
 Create table Compte(
     id SERIAL PRIMARY KEY,
     idUser int,
-    idRole int
     password varchar(255),
     login varchar(255),
 
-    foreign key idUser references User(id)
+    foreign key idUser references User(id),
     foreign key idRole references Role(id)
 );
 Create table Role(
@@ -29,7 +31,7 @@ Create table GroupeRegister(
     idGroupe int,
     idUser int,
 
-    foreign key idGroupe references Groupe(id)
+    foreign key idGroupe references Groupe(id),
     foreign key idUser references User(id)
 );
 
