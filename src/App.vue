@@ -22,6 +22,8 @@ import { Menu, ItemMenu, SectionMenu } from './common/menu';
       created() {
         //ImgResolver
         this.generateMenu();
+        // eslint-disable-next-line
+        console.log(process.env.VUE_APP_SECRET)
       }
 
       get layout(){

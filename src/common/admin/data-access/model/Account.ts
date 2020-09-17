@@ -3,7 +3,7 @@
 
 class Account {
 
-    private user:User;
+    // private user:User;
 
     constructor(login:string, password:string) {
         if (AccountService.isAccountReconized(login,password)){
