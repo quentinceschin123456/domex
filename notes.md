@@ -21,4 +21,10 @@
 
 # Pages envisagées
 
-* ListeCourse : page avec selector pour choisir le groupe affiché     
+* ListeCourse : page avec selector pour choisir le groupe affiché   
+
+
+# Utile 
+
+Pour insérer dans la db en utilisant un script
+psql -h localhost -U postgres -d postgres -a -f ./database/CreateTable.sql
