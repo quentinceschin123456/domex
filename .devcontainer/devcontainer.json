@@ -8,8 +8,7 @@
 	"features": {
 		"ghcr.io/devcontainers-extra/features/vue-cli:2": {}
 	},
-	"forwardPorts": [5432]
-
+	"forwardPorts": [5432,8080]
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
