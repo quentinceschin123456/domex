@@ -1,15 +1,19 @@
-Create table Groupe(
+-- permet de définir les groupes d'utilisateurs business pour les triés ou les associés à des comportements
+Create table Group(
     id SERIAL PRIMARY KEY,
-    nom varchar(255)
+    name varchar(255)
 
 );
-
+-- Roles au sein de l'application : user / admin / etc
+Create table Role(
+    id SERIAL PRIMARY KEY,
+    name varchar(255)
+);
 Create table User(
     id SERIAL PRIMARY KEY,
-    nom varchar(255),
-    prenom varchar(255),
+    username varchar(255),
 );
-Create table Compte(
+Create table Account(
     id SERIAL PRIMARY KEY,
     idUser int,
     idRole int
@@ -19,17 +23,15 @@ Create table Compte(
     foreign key idUser references User(id)
     foreign key idRole references Role(id)
 );
-Create table Role(
-    id SERIAL PRIMARY KEY,
-    nom varchar(255)
-);
+
+
 
 Create table GroupeRegister(
     id SERIAL PRIMARY KEY,
-    idGroupe int,
+    idGroup int,
     idUser int,
 
-    foreign key idGroupe references Groupe(id)
+    foreign key idGroup references Group(id)
     foreign key idUser references User(id)
 );
 
