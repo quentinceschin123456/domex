@@ -28,6 +28,29 @@ Il s'agit d'une liste de course insipirée de l'application "bring"
 Rechercher si possbile d'utiliser une API bring pour injecter la liste de course dans l'applciation
 mobile
 
+La page d'accueil de la section est la liste principale de l'utilisateur
+ 
+### Accès et droits 
+Page pour gérer le crud d'une liste de courses et l'association d'une liste de course à un user et/ou groupe de user
+
+Une liste possède un owner User, puis une liste de user (peut être vide) , puis une liste de groupes de user (peut être vide)
+
+### Configuration de Liste de course
+Activer ou non l'import dans bring!
+Customiser des items disponibles pour la liste ( ex : changer l'icone, le nom, ec=tc)
+Création d'item customiser
+
+configuration des sources de données ( https://platform.fatsecret.com/ , etc )
+TBD
+
+Peut être à fusionner dans la configuration globale de l'application pour un User
+
+### Liste A
+Liste nommée "A" de l'utilisateur courant
+
+### Liste B
+Liste nommée "B" de l'utilisateur courant
+
 
  ## Gestion des repas 
   
@@ -75,7 +98,7 @@ une note concerne des utilisateurs ou groupes d'utilisateurs
 ## Programme sportif/aliementaire
 Module sensible, à ne peut être pas dev
 
-Permet de faire un suivi des apports alimentaire pour l'utilisateur courant
+Permet de faire un suivi des apports alimentaire pour l'utilisateur courant  
 CRUD de repas ( se baser sur la liste des recette + d'ingrédients)
 Affichage avec des graphiques, charts ect des données
 Suivi de poids ( Données sensibles ?)
@@ -98,23 +121,23 @@ Page pour gérér des settings relatifs à l'authentifcation (OAuth2 de google o
 # TaskList : 
 
 ## Découpe et inventaire
-[ ] - Lister les fonctionnalités
-[ ] - Lister les pages / services
+[ ] - Lister les fonctionnalités  
+[ ] - Lister les pages / services  
 [ ] - 
 
 ## Maquettage
-[ ] - Design des layout
+[ ] - Design des layout  
 [ ] - Design des pages principales
-[ ] - Design autour des utilisateur (page gestion ou affichage dans l'appli, ex:bulle)
-[ ] - Design des composants communs
-[ ] - Design des composants spécifiques
+[ ] - Design autour des utilisateur (page gestion ou affichage dans l'appli, ex:bulle)  
+[ ] - Design des composants communs  
+[ ] - Design des composants spécifiques  
 [ ] - 
 
 ## Architecture logiciel
-[ ] - Modele de données business
-[ ] - Modele de base de données + données de tests/mock
-[ ] - Créer une application VueJS 3 vide avec les plugins (Vuetify, store, etc) 
-[ ] - Conception logiciel, découpe en module , bonne pratique ,etc
+[ ] - Modele de données business  
+[ ] - Modele de base de données + données de tests/mock  
+[ ] - Créer une application VueJS 3 vide avec les plugins (Vuetify, store, etc)   
+[ ] - Conception logiciel, découpe en module , bonne pratique ,etc  
 [ ] - 
 
 
